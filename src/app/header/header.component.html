@@ -1,0 +1,49 @@
+
+<div class="page-header">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        <a class="navbar-brand" [routerLink]="['/images']">
+          <i class="fa fa-map-pin" aria-hidden="true"></i> Pinteresting
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <!--<ul class="nav navbar-nav">
+          <li><a [routerLink]="['/']">All Images</a></li>
+        </ul>-->
+         <!--user is logged in -->
+        <div *ngIf="loggedIn">
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/images', user]">My Images</a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/add']">Add Image</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a>Logged in as {{ user }}</a>
+            </li>
+            <li>
+              <a (click)="logout()" style="cursor:pointer">
+              Logout
+            </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- user is not logged in -->
+        <div *ngIf="!loggedIn">
+          <ul class="nav navbar-nav navbar-right">
+             <li>
+               <a (click)="login()" style="cursor:pointer"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i> Login</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </nav>
+</div>

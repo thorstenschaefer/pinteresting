@@ -1,0 +1,16 @@
+<h2>Add an image to your pinwall</h2>
+
+<form role="form">
+    
+  <div class="form-group">
+    <label for="src">Image source:</label>
+    <input [(ngModel)]="image.src" type="text" class="form-control" id="src">
+  </div>
+  
+  <div class="form-group">
+    <label for="caption">Caption:</label>
+    <input [(ngModel)]="image.caption" type="text" class="form-control" id="caption">
+  </div>
+
+  <button (click)="submit()" class="btn btn-primary">Add</button>
+</form>
