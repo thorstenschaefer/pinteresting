@@ -1,0 +1,41 @@
+<div *ngIf="!images">
+  There are no images.
+</div>
+
+<div *ngIf="images">
+  <div *ngFor="let img of images" class="thumbnail col-md-2">
+    <img [src]="img.src" [alt]="img.caption">
+    <div class="caption">
+      
+    </div>
+    <p class="text-center">
+      <em>{{img.caption}}</em>
+    </p>
+    
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <a [routerLink]="['/images', img.owner]">{{img.owner}}</a>
+      </div>
+      <div class="col-md-6 text-right">
+        <p>
+          <span *ngIf="user == img.owner"> 
+            <span style="color:red"><i class="glyphicon glyphicon-heart"></i> {{img.likes}}</span>
+            <span style="color:black"><i class="glyphicon glyphicon-share"></i> {{img.shares}}</span>
+          </span>
+          <span *ngIf="user != img.owner">
+            <a (click)="like(img)" style="cursor:pointer"> 
+              <span style="color:red"><i class="glyphicon glyphicon-heart"></i> {{img.likes}}</span>
+            </a>
+            <a (click)="share(img)" style="cursor:pointer"> 
+              <span style="color:black"><i class="glyphicon glyphicon-share"></i> {{img.shares}}</span>
+            </a>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="user == img.owner" class="text-right">
+      <a (click)="delete(img)" class="btn btn-danger btn-xs">Delete</a>
+    </div>
+  </div>
+</div>

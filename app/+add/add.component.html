@@ -1,0 +1,25 @@
+<h3>Add an image to your pinwall</h3>
+
+<form role="form">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Source</h4>
+      <div class="form-group">
+        <label for="src">Image source:</label>
+        <input [ngFormControl]="imageUrl" (input)="onChange($event)" type="text" class="form-control" id="src">
+      </div>
+
+      <div class="form-group">
+        <label for="caption">Caption:</label>
+        <input [(ngModel)]="image.caption" type="text" class="form-control" id="caption">
+      </div>
+
+      <button (click)="submit()" [disabled]="previewSrc == '/invalid.png'"class="btn btn-primary">Add</button>
+    </div>
+    <div class="col-md-6">
+      <h4>Preview</h4>
+      <img [src]="previewSrc">
+    </div>
+  </div>
+</form>
+
