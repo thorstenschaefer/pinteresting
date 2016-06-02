@@ -9,7 +9,6 @@ import { UserService } from '../user.service';
   moduleId: module.id,
   selector: 'app-image-list',
   templateUrl: 'image-list.component.html',
-  styleUrls: ['image-list.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class ImageListComponent implements OnInit {
