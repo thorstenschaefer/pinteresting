@@ -9,7 +9,7 @@ import { Http } from '@angular/http';
 
 import { Image } from './image';
 
-const INVALID_IMAGE = '/invalid.png';
+const INVALID_IMAGE = './invalid.png';
 
 @Injectable()
 export class UserService {

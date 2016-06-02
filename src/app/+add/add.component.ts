@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
   
   private image:Image;
   
-  private previewSrc:string = "/invalid.png";
+  private previewSrc:string = "./invalid.png";
   private imageUrl = new Control();
 
   constructor(private userService:UserService, private router:Router) {}
