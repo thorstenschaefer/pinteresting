@@ -16,12 +16,13 @@ import { HeaderComponent } from './header/header.component';
 @Routes([
   {path: '/add', component: AddComponent},
   {path: '/images/:user', component: UserComponent},
+  {path: '/', component: UserComponent},
   {path: '/images', component: UserComponent},
 ])
 export class PinterestingAppComponent {
     
   constructor(private router:Router, private userService:UserService) {
     // Default route is images
-    this.router.navigate(["/images"]);
+    //this.router.navigate(["/images"]);
   }
 }
